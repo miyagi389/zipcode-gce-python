@@ -1,0 +1,33 @@
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+
+# Thumbnails
+._*
+
+
+# Intellij project files
+*.iml
+.idea/*
+
+
+# Python
+
+## Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+# App
+KEN_ALL.CSV
+bulkloader.yaml
+bulkloader-*

@@ -1,0 +1,72 @@
+python_preamble:
+- import: base64
+- import: re
+- import: google.appengine.ext.bulkload.transform
+- import: google.appengine.ext.bulkload.bulkloader_wizard
+- import: google.appengine.ext.db
+- import: google.appengine.api.datastore
+- import: google.appengine.api.users
+
+transformers:
+
+- kind: ZipCode
+  connector: csv
+  connector_options:
+    encoding: utf-8
+    skip_import_header_row: False
+    column_list: [jis_code, old_code, code, prefecture_kana, city_kana, town_kana, prefecture, city, town, town_divide, koaza_banchi, tyoume, has_some_town, update_state, update_reason]
+  property_map:
+    - property: __key__
+      external_name: key
+      export_transform: transform.key_id_or_name_as_string
+
+    - property: jis_code
+      external_name: jis_code
+
+    - property: old_code
+      external_name: old_code
+
+    - property: code
+      external_name: code
+
+    - property: prefecture_kana
+      external_name: prefecture_kana
+
+    - property: city_kana
+      external_name: city_kana
+
+    - property: town_kana
+      external_name: town_kana
+
+    - property: prefecture
+      external_name: prefecture
+
+    - property: city
+      external_name: city
+
+    - property: town
+      external_name: town
+
+    - property: town_divide
+      external_name: town_divide
+      import_transform: transform.none_if_empty(int)
+
+    - property: koaza_banchi
+      external_name: koaza_banchi
+      import_transform: transform.none_if_empty(int)
+
+    - property: tyoume
+      external_name: tyoume
+      import_transform: transform.none_if_empty(int)
+
+    - property: has_some_town
+      external_name: has_some_town
+      import_transform: transform.none_if_empty(int)
+
+    - property: update_state
+      external_name: update_state
+      import_transform: transform.none_if_empty(int)
+
+    - property: update_reason
+      external_name: update_reason
+      import_transform: transform.none_if_empty(int)
