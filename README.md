@@ -1,4 +1,4 @@
-zipcode-gce-python
+zipcode-ja-python-gae
 ====
 
 Japan ZIP Code search API.
@@ -32,5 +32,5 @@ http://localhost:8080/_ah/api/explorerø
 
 ## Download source code
 ```bash
-rm ./out ; mkdir ./out && appcfg.py download_app --application zipcode-gce-python ./out
+rm ./out ; mkdir ./out && appcfg.py download_app --application zipcode-ja-python-gae ./out
 ```

@@ -12,7 +12,7 @@ from app.models import ZipCode
 
 u"""Japan ZIP Code API implemented using Google Cloud Endpoints."""
 
-CLIENT_ID = "zipcode-gce-python"
+CLIENT_ID = "zipcode-ja-python-gae"
 
 
 @endpoints.api(
